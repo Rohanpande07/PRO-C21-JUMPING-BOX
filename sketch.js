@@ -7,7 +7,6 @@ function preload(){
     music = loadSound("music.mp3");
 }
 
-
 function setup(){
     canvas = createCanvas(800,600);
 
@@ -36,20 +35,24 @@ function draw() {
 
     if(blueBox.isTouching(movingBox) && movingBox.bounceOff(blueBox)) {
         movingBox.shapeColor = "blue";
+        music.play();
     }
     
     if(orangeBox.isTouching(movingBox) && movingBox.bounceOff(orangeBox)) {
         movingBox.shapeColor = "orange";
         movingBox.velocityX = 0;
         movingBox.velocityY = 0;
+        music.stop();
     }
     
     if(purpleBox.isTouching(movingBox) && movingBox.bounceOff(purpleBox)) {
         movingBox.shapeColor = "purple";
+        music.play();
     }
 
     if(greenBox.isTouching(movingBox) && movingBox.bounceOff(greenBox)) {
         movingBox.shapeColor = "green";
+        music.play();
     }
 
     drawSprites();
